@@ -1,8 +1,9 @@
 # Compiled files
-*.py[co]
+*.py[cod]
 *.a
 *.o
 *.so
+*.pyd
 __pycache__
 
 # Ignore .c files by default to avoid including generated code. If you want to
@@ -10,12 +11,15 @@ __pycache__
 *.c
 
 # Other generated files
-*/version.py
+findobj/version.py
+findobj/cython_version.py
+findobj/findobj.cfg
 benchmarks/_results
 
 # Sphinx
 _build
 _generated
+docs/api
 
 # Packages/installer info
 *.egg
@@ -32,9 +36,16 @@ develop-eggs
 distribute-*.tar.gz
 
 # Other
+.cache
+.tox
 .*.swp
 *~
-*.fits
+.project
+.pydevproject
+.settings
+.coverage
+cover
+htmlcov
 
 # Mac OSX
 .DS_Store
