@@ -1,4 +1,4 @@
-Copyright (c) 2013, Larry Bradley
+Copyright (c) 2013-2014, findobj developers
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,

@@ -9,6 +9,7 @@ import scipy.ndimage
 # import astropy.nddata
 from astropy.table import Column, Table
 
+__all__ = ['daofind', 'irafstarfind']
 
 warnings.simplefilter('always', UserWarning)
 FWHM2SIGMA = 1.0 / (2.0 * np.sqrt(2.0 * np.log(2.0)))
@@ -173,13 +174,13 @@ class _FindObjKernel(object):
 def daofind(data, fwhm, threshold, sigma_radius=1.5, ratio=1.0, theta=0.0,
             sky=0.0, sharplo=0.2, sharphi=1.0, roundlo=-1.0, roundhi=1.0):
     """
-    ``daofind`` detects stars in an image using the `DAOFIND`_
-    algorithm.  ``daofind`` searches images for local density maxima
-    that have a peak amplitude greater than ``threshold``
-    (approximately; ``threshold`` is applied to a convolved image) and
-    have a size and shape similar to the defined 2D Gaussian kernel.
-    The Gaussian kernel is defined by the ``fwhm``, ``ratio``, ``theta``,
-    and ``sigma_radius`` input parameters.
+    Detect stars in an image using the DAOFIND algorithm.  `DAOFIND`_
+    searches images for local density maxima that have a peak amplitude
+    greater than ``threshold`` (approximately; ``threshold`` is applied
+    to a convolved image) and have a size and shape similar to the
+    defined 2D Gaussian kernel.  The Gaussian kernel is defined by the
+    ``fwhm``, ``ratio``, ``theta``, and ``sigma_radius`` input
+    parameters.
 
     .. _DAOFIND: http://iraf.net/irafhelp.php?val=daofind&help=Help+Page
 
@@ -306,12 +307,12 @@ def daofind(data, fwhm, threshold, sigma_radius=1.5, ratio=1.0, theta=0.0,
 def irafstarfind(data, fwhm, threshold, sigma_radius=1.5, sky=None,
                  sharplo=0.5, sharphi=2.0, roundlo=0.0, roundhi=0.2):
     """
-    ``irafstarfind`` detects stars in an image using IRAF's `starfind`_
-    algorithm.  ``irafstarfind`` searches images for local density
-    maxima that have a peak amplitude greater than ``threshold`` above
-    the local background and have a PSF full-width half-maximum similar
-    to the input ``fwhm``.  The objects' centroid, roundness
-    (ellipticity), and sharpness are calculated using image moments.
+    Detect stars in an image using IRAF's `starfind`_ algorithm.
+    ``irafstarfind`` searches images for local density maxima that have
+    a peak amplitude greater than ``threshold`` above the local
+    background and have a PSF full-width half-maximum similar to the
+    input ``fwhm``.  The objects' centroid, roundness (ellipticity), and
+    sharpness are calculated using image moments.
 
     .. _starfind: http://iraf.net/irafhelp.php?val=starfind&help=Help+Page
 

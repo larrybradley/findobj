@@ -40,7 +40,4 @@ Reference/API
 =============
 
 .. automodapi:: findobj.detection
-    :no-heading:
-    :skip: img_stats
 .. automodapi:: findobj.findstars
-    :no-heading:

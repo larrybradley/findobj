@@ -9,5 +9,3 @@ Reference/API
 =============
 
 .. automodapi:: findobj.utils.scale_img
-    :no-heading:
-    :skip: sigma_clip

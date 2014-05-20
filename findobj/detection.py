@@ -5,6 +5,8 @@ import numpy as np
 from scipy import ndimage
 from .utils.scale_img import img_stats
 
+__all__ = ['detect_sources', 'find_peaks']
+
 
 def detect_sources(image, snr_threshold, npixels, filter_fwhm=None,
                    image_mask=None, mask_val=None, sig=3.0, iters=None):
