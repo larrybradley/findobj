@@ -1,17 +1,14 @@
 findobj
 =======
 
-It is likely that ``findobj`` will eventually be merged into
+It is likely that `findobj` will eventually be merged into
 `photutils <http://photutils.readthedocs.org/en/latest/>`_ or
 `astropy`_.
 
 .. warning::
-    ``findobj`` requires `astropy`_ version 0.3.0 (or newer).
+    `findobj` requires `astropy`_ version 0.4 (or newer).
 
-    ``findobj`` requires `scikit-image`_ for some functionality.
-
-    ``findobj`` is currently a work-in-progress, and thus it is
-    possible there will be significant API changes in later versions.
+    `findobj` requires `scikit-image`_ for some functionality.
 
 
 Source Detection and Segmentation
