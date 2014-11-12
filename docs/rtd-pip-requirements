@@ -3,4 +3,6 @@ scipy
 matplotlib
 Cython
 scikit-image
--e git+http://github.com/astropy/astropy.git#egg=astropy
+astropy-helpers
+astropy
+-e git+http://github.com/astropy/imageutils.git#egg=imageutils
