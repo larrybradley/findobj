@@ -4,11 +4,10 @@ from __future__ import (absolute_import, division, print_function,
 import numpy as np
 from astropy.modeling import models
 from astropy.modeling.fitting import LevMarLSQFitter
-from photutils import SegmentProperties
 
 
 __all__ = ['centroid_com', 'gaussian1d_moments', 'centroid_1dg',
-           'centroid_2dg', 'fit_2dgaussian', 'data_properties']
+           'centroid_2dg', 'fit_2dgaussian']
 
 
 def _convert_image(data, mask=None):
@@ -241,35 +240,36 @@ def fit_2dgaussian(data, error=None, mask=None):
     return gfit
 
 
-def data_properties(data, mask=None, background=None):
-    """
-    Calculate the centroid and morphological properties of a 2D array,
-    e.g., an image cutout of an object.
-
-    Parameters
-    ----------
-    data : array_like or `~astropy.units.Quantity`
-        The 2D array of the image.
-
-    mask : array_like (bool), optional
-        A boolean mask, with the same shape as ``data``, where a
-        `True` value indicates the corresponding element of ``data``
-        is masked.  Masked data are excluded/ignored from all
-        calculations.
-
-    background : float, array_like, or `~astropy.units.Quantity`, optional
-        The background level of the input ``data``.  ``background``
-        may either be a scalar value or a 2D image with the same
-        shape as the input ``data``.  If the input ``data`` has been
-        background-subtracted, then set ``background`` to `None`
-        (the default) or ``0.``.
-
-    Returns
-    -------
-    result : `photutils.segmentation.SegmentProperties` instance
-        A `photutils.segmentation.SegmentProperties` object.
-    """
-
-    segment_image = np.ones(data.shape, dtype=np.int)
-    return SegmentProperties(data, segment_image, label=1, mask=mask,
-                             background=background)
+#def data_properties(data, mask=None, background=None):
+#    """
+#    Calculate the centroid and morphological properties of a 2D array,
+#    e.g., an image cutout of an object.
+#
+#    Parameters
+#    ----------
+#    data : array_like or `~astropy.units.Quantity`
+#        The 2D array of the image.
+#
+#    mask : array_like (bool), optional
+#        A boolean mask, with the same shape as ``data``, where a
+#        `True` value indicates the corresponding element of ``data``
+#        is masked.  Masked data are excluded/ignored from all
+#        calculations.
+#
+#    background : float, array_like, or `~astropy.units.Quantity`, optional
+#        The background level of the input ``data``.  ``background``
+#        may either be a scalar value or a 2D image with the same
+#        shape as the input ``data``.  If the input ``data`` has been
+#        background-subtracted, then set ``background`` to `None`
+#        (the default) or ``0.``.
+#
+#    Returns
+#    -------
+#    result : `photutils.segmentation.SegmentProperties` instance
+#        A `photutils.segmentation.SegmentProperties` object.
+#    """
+#
+#    from photutils import SegmentProperties
+#    segment_image = np.ones(data.shape, dtype=np.int)
+#    return SegmentProperties(data, segment_image, label=1, mask=mask,
+#                             background=background)
